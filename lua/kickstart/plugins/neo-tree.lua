@@ -11,7 +11,13 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    {
+      '<leader>e',
+      function()
+        require('neo-tree.command').execute { toggle = true }
+      end,
+      desc = 'NeoTree reveal',
+    },
   },
   opts = {
     filesystem = {
